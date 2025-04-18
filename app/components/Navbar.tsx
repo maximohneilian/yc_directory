@@ -2,7 +2,6 @@ import React from 'react'
 import Link from "next/link";
 import Image from "next/image";
 import {auth, signIn, signOut} from "@/auth";
-import {options} from "preact";
 
 const Navbar = async () => {
   const session = await auth();
@@ -26,7 +25,7 @@ const Navbar = async () => {
                     <button className="cursor-pointer" type="submit">Logout</button>
                   </form>
 
-                  <Link href={`/user/${session?.id}`}>
+                  <Link href={`/user/${session?.user?.id}`}>
                     <span>{session?.user?.name}</span>
                   </Link>
                 </>
